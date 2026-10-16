@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('react-markdown', () => ({ children }) => <>{children}</>);
+jest.mock('remark-gfm', () => () => null);
+
+test('renders home page content', () => {
+  window.scrollTo = jest.fn();
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/latest posts/i)).toBeInTheDocument();
 });

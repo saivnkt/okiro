@@ -21,6 +21,7 @@ const postData = [
     authorUrl: "https://source.unsplash.com/1600x900/?nature",
     color: "#ffeab9",
     tags: ["creative", "idea", "product"],
+    member: false,
     content: articles.article11,
   },
   {
